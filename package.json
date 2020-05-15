@@ -1,0 +1,32 @@
+{
+  "name": "hrosetta",
+  "version": "1.0.0",
+  "description": "Rosetta bike-shed",
+  "main": "./lib/plugin.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "lint": "eslint lib/ test/ || exit 0",
+    "test": "mocha --reporter spec test/*-test.js",
+    "docs": "jsdoc -c jsdoc.json",
+    "cover": "istanbul cover node_modules/.bin/_mocha  -- --reporter spec test/*-test.js",
+    "clean": "rm -rf coverage && rm -rf docs"
+  },
+  "keywords": [
+    "hsd",
+    "plugin",
+    "coinbase",
+    "rosetta"
+  ],
+  "author": "The Handshake Developers",
+  "license": "MIT",
+  "dependencies": {
+    "babel-eslint": "^10.1.0",
+    "bcrypto": "^5.1.0",
+    "blgr": "^0.1.7",
+    "bweb": "^0.1.10",
+    "eslint": "^7.0.0"
+  }
+}
