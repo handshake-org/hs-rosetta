@@ -4,7 +4,7 @@ hrosetta is a [hsd][hsd] plugin for coinbase rosetta.
 
 ## Usage
 
-Note: Temporarily we require a fork of hsd: https://github.com/tuxcanfly/hsd/tree/rosetta
+Note: Temporarily we require a minor fork of hsd: https://github.com/tuxcanfly/hsd/tree/rosetta
 
 ## API Reference:
 
@@ -33,6 +33,10 @@ Link hrosetta:
 Run hsd, along with `hrosetta` plugin:
 
     $ hsd --plugins hrosetta
+
+Verify the hrosetta HTTP server is up:
+
+    curl -X POST http://localhost:8080/network/status
 
 Run quick check:
 
