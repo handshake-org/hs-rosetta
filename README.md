@@ -16,7 +16,21 @@ Install the rosetta-cli validator:
 
     $ go get github.com/coinbase/rosetta-cli
 
-Run hsd (tuxcanfly/rosetta branch), along with `hrosetta` plugin:
+Link hrosetta:
+
+    $ git clone https://github.com/tuxcanfly/hrosetta
+
+    $ cd hrosetta
+
+    $ npm link
+
+    $ git clone https://github.com/tuxcanfly/hsd/tree/rosetta
+
+    $ cd hsd
+
+    $ npm link hrosetta
+
+Run hsd, along with `hrosetta` plugin:
 
     $ hsd --plugins hrosetta
 
