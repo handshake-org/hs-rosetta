@@ -1,0 +1,13 @@
+{
+    "network_identifier": {
+        "blockchain": "handshake",
+        "network": "simnet"
+    },
+    "account_identifier": {
+        "address": "ss1qa4d99u4dazxyjdllzf8rhhmlh27rcna9pnjccd"
+    },
+    "block_identifier": {
+        "index": 101,
+        "hash": "6478f1a4aeb094fb0843294434153b3caae3b789478d7c6d3d2925daa87598c0"
+    }
+}
