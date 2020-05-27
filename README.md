@@ -40,7 +40,7 @@ Verify the hrosetta HTTP server is up:
 
 Run quick check:
 
-    $ rosetta-cli check:quick
+    $ rosetta-cli check
 
 ## Contribution and License Agreement
 
