@@ -32,15 +32,28 @@ Link hs-rosetta:
 
 Run hsd, along with `hs-rosetta` plugin:
 
-    $ hsd --plugins hs-rosetta
+    $ hsd --plugins hs-rosetta --network=simnet --index-tx --index-address
 
 Verify the hs-rosetta HTTP server is up:
 
-    curl -X POST http://localhost:8080/network/status
+    $ curl -X POST http://localhost:8080/network/status
+
+Generate a chain to validate:
+
+    $ hsd cli generatetoaddress <address> <blocks>
+
+Maybe add some transactions and mine them:
+
+    $ hsd cli sendtoaddress <address> <amount>
+
+    $ hsd cli generatetoaddress <address> <blocks>
 
 Run quick check:
 
     $ rosetta-cli check
+
+Should exit gracefully after syncing to tip. If it fails, you might see
+"Reconciliation failed" or similar error. Please report it.
 
 ## Contribution and License Agreement
 
