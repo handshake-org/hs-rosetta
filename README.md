@@ -1,6 +1,6 @@
-# hrosetta
+# hs-rosetta
 
-hrosetta is a [hsd][hsd] plugin for coinbase rosetta.
+hs-rosetta is a [hsd][hsd] plugin for coinbase rosetta.
 
 ## Usage
 
@@ -16,11 +16,11 @@ Install the rosetta-cli validator:
 
     $ go get github.com/coinbase/rosetta-cli
 
-Link hrosetta:
+Link hs-rosetta:
 
-    $ git clone https://github.com/tuxcanfly/hrosetta
+    $ git clone https://github.com/tuxcanfly/hs-rosetta
 
-    $ cd hrosetta
+    $ cd hs-rosetta
 
     $ npm link
 
@@ -28,13 +28,13 @@ Link hrosetta:
 
     $ cd hsd
 
-    $ npm link hrosetta
+    $ npm link hs-rosetta
 
-Run hsd, along with `hrosetta` plugin:
+Run hsd, along with `hs-rosetta` plugin:
 
-    $ hsd --plugins hrosetta
+    $ hsd --plugins hs-rosetta
 
-Verify the hrosetta HTTP server is up:
+Verify the hs-rosetta HTTP server is up:
 
     curl -X POST http://localhost:8080/network/status
 

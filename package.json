@@ -1,5 +1,5 @@
 {
-  "name": "hrosetta",
+  "name": "hs-rosetta",
   "version": "1.0.0",
   "description": "Rosetta bike-shed",
   "main": "./lib/plugin.js",
