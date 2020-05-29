@@ -1,0 +1,8 @@
+{
+    "network_identifiers": [
+        {
+            "blockchain": "handshake",
+            "network": "simnet"
+        }
+    ]
+}

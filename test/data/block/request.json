@@ -1,0 +1,10 @@
+{
+  "network_identifier": {
+    "blockchain": "handshake",
+    "network": "simnet"
+  },
+  "block_identifier": {
+    "index": 0,
+    "hash": "0e648edc9cddb179014658061ea3f666a45cf44881877ae506e6babefbef6992"
+  }
+}

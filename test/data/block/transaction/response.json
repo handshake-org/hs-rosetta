@@ -1,0 +1,33 @@
+{
+  "transaction_identifier": {
+    "hash": "9553240e6f711271cfccf9407c9348996e61cb3bd39adbc2ec258ff940ff22c6"
+  },
+  "operations": [
+    {
+      "operation_identifier": {
+        "index": 0,
+        "network_index": 0
+      },
+      "type": "TRANSFER",
+      "status": "SUCCESS",
+      "account": {
+        "address": "ss1q7q3h4chglps004u3yn79z0cp9ed24rfr9dn5nv"
+      },
+      "amount": {
+        "value": "2002210000",
+        "currency": {
+          "symbol": "HNS",
+          "decimals": 8,
+          "metadata": {
+            "Issuer": "handshake-org"
+          }
+        }
+      },
+      "metadata": {}
+    }
+  ],
+  "metadata": {
+    "size": 215,
+    "lockTime": 0
+  }
+}

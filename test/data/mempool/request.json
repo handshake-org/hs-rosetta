@@ -1,0 +1,9 @@
+{
+  "network_identifier": {
+    "blockchain": "handshake",
+    "network": "simnet"
+  },
+  "transaction_identifier": {
+    "hash": "9553240e6f711271cfccf9407c9348996e61cb3bd39adbc2ec258ff940ff22c6"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "network_identifier": {
+    "blockchain": "handshake",
+    "network": "simnet"
+  },
+  "signed_transaction": "string"
+}
