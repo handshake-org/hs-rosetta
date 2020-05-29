@@ -32,7 +32,7 @@ Link hs-rosetta:
 
 Run hsd, along with `hs-rosetta` plugin:
 
-    $ hsd --plugins hs-rosetta --network=simnet --index-tx --index-address
+    $ hsd --network=simnet --plugins hs-rosetta --index-tx --index-address
 
 Verify the hs-rosetta HTTP server is up:
 
@@ -40,13 +40,13 @@ Verify the hs-rosetta HTTP server is up:
 
 Generate a chain to validate:
 
-    $ hsd cli generatetoaddress <address> <blocks>
+    $ hsd cli --network=simnet generatetoaddress <address> <blocks>
 
 Maybe add some transactions and mine them:
 
-    $ hsd cli sendtoaddress <address> <amount>
+    $ hsd cli --network=simnet sendtoaddress <address> <amount>
 
-    $ hsd cli generatetoaddress <address> <blocks>
+    $ hsd cli --network=simnet generatetoaddress <address> <blocks>
 
 Run quick check:
 
