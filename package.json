@@ -9,9 +9,9 @@
   },
   "scripts": {
     "lint": "eslint lib/ test/ || exit 0",
-    "test": "mocha --reporter spec test/*-test.js",
+    "test": "bmocha --reporter spec test/*-test.js",
     "docs": "jsdoc -c jsdoc.json",
-    "cover": "istanbul cover node_modules/.bin/_mocha  -- --reporter spec test/*-test.js",
+    "cover": "istanbul cover node_modules/.bin/_bmocha  -- --reporter spec test/*-test.js",
     "clean": "rm -rf coverage && rm -rf docs"
   },
   "keywords": [
