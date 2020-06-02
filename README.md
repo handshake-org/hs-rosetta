@@ -30,27 +30,17 @@ Link hs-rosetta:
 
     $ npm link hs-rosetta
 
-Run hsd, along with `hs-rosetta` plugin:
+Sync mainnet:
 
-    $ hsd --network=simnet --plugins hs-rosetta --index-tx --index-address
+    $ hsd --plugins hs-rosetta --index-tx --index-address
 
-Verify the hs-rosetta HTTP server is up:
-
-    $ curl -X POST http://localhost:8080/network/status
-
-Generate a chain to validate:
-
-    $ hsd cli --network=simnet generatetoaddress <address> <blocks>
-
-Maybe add some transactions and mine them:
-
-    $ hsd cli --network=simnet sendtoaddress <address> <amount>
-
-    $ hsd cli --network=simnet generatetoaddress <address> <blocks>
-
-Run quick check:
+Run check:
 
     $ rosetta-cli check
+
+Should start syncing:
+
+    >>2020/06/03 00:19:37 Adding block &{Index:2780 Hash:00000000000006105d6970a3c1a2c0b8ebee6f4597a3830eb80bb77062f42c7d}
 
 Should exit gracefully after syncing to tip. If it fails, you might see
 "Reconciliation failed" or similar error. Please report it.
