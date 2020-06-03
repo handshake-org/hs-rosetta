@@ -4,11 +4,16 @@ hs-rosetta is a [hsd][hsd] plugin for coinbase rosetta.
 
 ## Usage
 
-Note: Temporarily we require a minor fork of hsd: https://github.com/tuxcanfly/hsd/tree/rosetta
+    hsd --plugins hs-rosetta --index-tx --index-address
 
-## API Reference:
+requires `--index-tx` `--index-address` for reporting account balances.
+
+## Reference
 
 https://djr6hkgq2tjcs.cloudfront.net
+
+NOTE: We do not support address balance by height yet. According to the spec,
+this is optional.
 
 ## Testing
 
@@ -16,27 +21,17 @@ Install the rosetta-cli validator:
 
     $ go get github.com/coinbase/rosetta-cli
 
-Link hs-rosetta:
+Install hsd, hs-rosetta:
 
-    $ git clone https://github.com/tuxcanfly/hs-rosetta
-
-    $ cd hs-rosetta
-
-    $ npm link
-
-    $ git clone https://github.com/tuxcanfly/hsd/tree/rosetta
-
-    $ cd hsd
-
-    $ npm link hs-rosetta
+    $ npm install hsd hs-rosetta
 
 Sync mainnet:
 
     $ hsd --plugins hs-rosetta --index-tx --index-address
 
-Run check (use `--lookup-balance-by-block=false` for faster validation):
+Run check (`--lookup-balance-by-block=false` is required):
 
-    $ rosetta-cli check
+    $ rosetta-cli check --lookup-balance-by-block=false
 
 Should start syncing:
 
@@ -48,6 +43,20 @@ When successful, it should sync to the tip and sleep:
 
 If it fails, you might see `Reconciliation failed` or similar error. Please
 report it.
+
+## Development
+
+Link hs-rosetta:
+
+    $ git clone https://github.com/tuxcanfly/hs-rosetta
+
+    $ cd hs-rosetta
+
+    $ npm link
+
+    $ cd hsd
+
+    $ npm link hs-rosetta
 
 ## Contribution and License Agreement
 
