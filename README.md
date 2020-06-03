@@ -34,16 +34,20 @@ Sync mainnet:
 
     $ hsd --plugins hs-rosetta --index-tx --index-address
 
-Run check:
+Run check (use `--lookup-balance-by-block=false` for faster validation):
 
     $ rosetta-cli check
 
 Should start syncing:
 
-    >>2020/06/03 00:19:37 Adding block &{Index:2780 Hash:00000000000006105d6970a3c1a2c0b8ebee6f4597a3830eb80bb77062f42c7d}
+    >>Adding block &{Index:17819 Hash:00000000000002146e6df64bc47a06b89e936b5e4f5349e3ffbaab27e4439644}
 
-Should exit gracefully after syncing to tip. If it fails, you might see
-"Reconciliation failed" or similar error. Please report it.
+When successful, it should sync to the tip and sleep:
+
+    2020/06/03 17:17:38 Syncer at tip 17820...sleeping
+
+If it fails, you might see `Reconciliation failed` or similar error. Please
+report it.
 
 ## Contribution and License Agreement
 
