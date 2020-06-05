@@ -17,29 +17,31 @@ the spec, this is optional.
 
 ## Testing
 
-Make sure you have the latest hsd from master:
+Install hsd:
 
     $ git clone https://github.com/handshake-org/hsd
+    $ cd hsd
+    $ npm install
+
+Install hs-rosetta:
+
+    $ git clone https://github.com/tuxcanfly/hs-rosetta
+    $ cd hs-rosetta
+    $ npm install
+    $ npm link
 
 Link hs-rosetta:
 
-    $ git clone https://github.com/tuxcanfly/hs-rosetta
-
-    $ cd hs-rosetta
-
-    $ npm link
-
     $ cd hsd
-
     $ npm link hs-rosetta
-
-Install the rosetta-cli validator:
-
-    $ go get github.com/coinbase/rosetta-cli
 
 Sync mainnet:
 
     $ hsd --plugins hs-rosetta --index-tx --index-address
+
+Install rosetta-cli:
+
+    $ go get github.com/coinbase/rosetta-cli
 
 Run check:
 
@@ -48,13 +50,11 @@ Run check:
 NOTE: `--lookup-balance-by-block=false` is required because we do not support
 querying address balance by height yet.
 
-Should start syncing:
+Successful result:
 
     >>Adding block &{Index:17819 Hash:00000000000002146e6df64bc47a06b89e936b5e4f5349e3ffbaab27e4439644}
-
-When successful, it should sync to the tip and sleep:
-
-    2020/06/03 17:17:38 Syncer at tip 17820...sleeping
+    >>...
+    >>2020/06/03 17:17:38 Syncer at tip 17820...sleeping
 
 If it fails, you might see `Reconciliation failed` or similar error. Please
 report it.
