@@ -59,6 +59,27 @@ Successful result:
 If it fails, you might see `Reconciliation failed` or similar error. Please
 report it.
 
+## Config
+
+Options to the Rosetta HTTP Server can be configured by using the following
+arguments:
+
+      --rosetta-http-host: HTTP host
+      --rosetta-http-port: HTTP port
+      --rosetta-api-key: API key
+      --rosetta-no-auth: Disable auth
+      --rosetta-cors: Enable CORS
+      --rosetta-ssl: Whether to enable SSL
+      --rosetta-ssl-key: SSL key
+      --rosetta-ssl-cert: SSL cert
+
+The same options can be configured using the file: `~/.hsd/rosetta.conf`
+assuming the `prefix` is `~/.hsd`, for example:
+
+    $ cat ~/.hsd/rosetta.conf
+
+    rosetta-http-port: 8123
+
 ## Contribution and License Agreement
 
 If you contribute code to this project, you are implicitly allowing your code
