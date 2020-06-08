@@ -29,9 +29,7 @@ const endpoints = [
   '/block',
   '/block/transaction',
   '/construction/metadata',
-  //'/construction/submit', TODO: fix 500
-  '/mempool',
-  //'/mempool/transaction'  TODO: test
+  '/mempool'
 ];
 
 describe('Rosetta Schema', function() {
