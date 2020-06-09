@@ -3,5 +3,5 @@
     "blockchain": "handshake",
     "network": "simnet"
   },
-  "signed_transaction": "string"
+  "signed_transaction": "<placeholder>"
 }
