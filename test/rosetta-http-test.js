@@ -60,36 +60,61 @@ describe('Rosetta Schema', function() {
     });
   }
 
-  it('should mine 100 blocks', async () => {
-    wallet = await wdb.create();
-    const cbAddress = await wallet.receiveAddress();
-    await mineBlocks(100, cbAddress.toString(network));
-  });
-
-  it('should submit transaction to mempool', async () => {
-    const mtx = await wallet.createTX({
-      rate: 100000,
-      outputs: [{
-        value: 100000,
-        address: await wallet.receiveAddress()
-      }]
+  {
+    let tx, cbAddress, toAddress, changeAddress = null;
+    it('should mine 100 blocks', async () => {
+      wallet = await wdb.create();
+      cbAddress = await wallet.receiveAddress();
+      await mineBlocks(100, cbAddress.toString(network));
     });
 
-    await wallet.sign(mtx);
-    assert(mtx.isSigned());
-    const tx = mtx.toTX();
-    await wdb.addTX(tx);
+    it('should match POST response for /construction/submit', async () => {
+      toAddress = await wallet.receiveAddress();
+      changeAddress = await wallet.changeAddress();
+      const mtx = await wallet.createTX({
+        rate: 100000,
+        outputs: [{
+          value: 100000,
+          address: toAddress
+        }],
+        changeAddress: changeAddress
+      });
 
-    const endpoint = '/construction/submit';
-    const params = require(`./data${endpoint}/request.json`);
-    params.signed_transaction = tx.toRaw().toString('hex');
+      await wallet.sign(mtx);
+      assert(mtx.isSigned());
+      tx = mtx.toTX();
+      await wdb.addTX(tx);
 
-    const expected = require(`./data${endpoint}/response.json`);
-    const data = await client.post(endpoint, params);
-    expected.transaction_identifier.hash = tx.hash().toString('hex');
+      const endpoint = '/construction/submit';
+      const params = require(`./data${endpoint}/request.json`);
+      params.signed_transaction = tx.toRaw().toString('hex');
 
-    assert.deepEqual(data, expected);
-  });
+      const expected = require(`./data${endpoint}/response.json`);
+      const data = await client.post(endpoint, params);
+      expected.transaction_identifier.hash = tx.hash().toString('hex');
+
+      assert.deepEqual(data, expected);
+    });
+
+    it('should match POST response for /mempool/transaction', async () => {
+      const endpoint = '/mempool/transaction';
+      const params = require(`./data${endpoint}/request.json`);
+      params.transaction_identifier.hash = tx.hash().toString('hex');
+
+      const expected = require(`./data${endpoint}/response.json`);
+      const data = await client.post(endpoint, params);
+
+      expected.transaction.transaction_identifier.hash = tx.hash().toString('hex');
+      expected.transaction.operations[0].account.address = cbAddress.toString(network);
+      expected.transaction.operations[1].account.address = toAddress.toString(network);
+      expected.transaction.operations[2].account.address = changeAddress.toString(network);
+
+      expected.transaction.operations[0].metadata.asm = tx.inputs[0].witness.toASM();
+      expected.transaction.operations[0].metadata.hex = tx.inputs[0].witness.toHex();
+
+      assert.deepEqual(data, expected);
+    });
+  }
 
   it('should cleanup', async () => {
     await node.close();

@@ -1,0 +1,82 @@
+{
+  "transaction": {
+    "transaction_identifier": {
+      "hash": "<placeholder>"
+    },
+    "operations": [
+      {
+        "operation_identifier": {
+          "index": 0,
+          "network_index": 0
+        },
+        "type": "TRANSFER",
+        "status": "SUCCESS",
+        "account": {
+          "address": "<placeholder>"
+        },
+        "amount": {
+          "value": "-2000000000",
+          "currency": {
+            "symbol": "HNS",
+            "decimals": 8,
+            "metadata": {
+              "Issuer": "handshake-org"
+            }
+          }
+        },
+        "metadata": {
+          "asm": "<placeholder>",
+          "hex": "<placeholder>"
+        }
+      },
+      {
+        "operation_identifier": {
+          "index": 1,
+          "network_index": 0
+        },
+        "type": "TRANSFER",
+        "status": "SUCCESS",
+        "account": {
+          "address": "<placeholder>"
+        },
+        "amount": {
+          "value": "100000",
+          "currency": {
+            "symbol": "HNS",
+            "decimals": 8,
+            "metadata": {
+              "Issuer": "handshake-org"
+            }
+          }
+        },
+        "metadata": {}
+      },
+      {
+        "operation_identifier": {
+          "index": 2,
+          "network_index": 0
+        },
+        "type": "TRANSFER",
+        "status": "SUCCESS",
+        "account": {
+          "address": "<placeholder>"
+        },
+        "amount": {
+          "value": "1999886000",
+          "currency": {
+            "symbol": "HNS",
+            "decimals": 8,
+            "metadata": {
+              "Issuer": "handshake-org"
+            }
+          }
+        },
+        "metadata": {}
+      }
+    ],
+    "metadata": {
+      "lockTime": 0,
+      "size": 215
+    }
+  }
+}
