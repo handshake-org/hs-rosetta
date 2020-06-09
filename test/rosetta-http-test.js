@@ -97,6 +97,7 @@ describe('Rosetta Schema', function() {
     });
 
     it('should match POST response for /mempool/transaction', async () => {
+      await sleep(500);
       const endpoint = '/mempool/transaction';
       const params = require(`./data${endpoint}/request.json`);
       params.transaction_identifier.hash = tx.hash().toString('hex');
@@ -156,3 +157,6 @@ async function forValue(obj, key, val, timeout = 30000) {
   });
 };
 
+async function sleep(time) {
+  return new Promise(resolve => setTimeout(resolve, time));
+}
