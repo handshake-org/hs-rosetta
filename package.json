@@ -27,7 +27,8 @@
     "bcrypto": "^5.1.0",
     "blgr": "^0.1.7",
     "bval": "^0.1.6",
-    "bweb": "^0.1.10"
+    "bweb": "^0.1.10",
+    "hs-client": "0.0.8"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
