@@ -118,8 +118,8 @@ describe('Rosetta Schema', function() {
   }
 
   it('should cleanup', async () => {
-    await node.close();
     await client.close();
+    await node.close();
   });
 });
 
