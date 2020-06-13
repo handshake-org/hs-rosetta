@@ -17,23 +17,93 @@
     "errors": [
       {
         "code": 1,
-        "message": "Invalid params.",
+        "message": "Transaction is required.",
         "retriable": true
       },
       {
         "code": 2,
-        "message": "Unexpected error.",
+        "message": "Transaction hash is required.",
         "retriable": true
       },
       {
         "code": 3,
-        "message": "Not supported,",
+        "message": "Block is required.",
         "retriable": true
       },
       {
         "code": 4,
-        "message": "Unable to relay tx.",
+        "message": "Block height is required.",
         "retriable": true
+      },
+      {
+        "code": 5,
+        "message": "Block hash mismatch.",
+        "retriable": true
+      },
+      {
+        "code": 6,
+        "message": "Account is required.",
+        "retriable": true
+      },
+      {
+        "code": 7,
+        "message": "Address is required.",
+        "retriable": true
+      },
+      {
+        "code": 8,
+        "message": "Network is required.",
+        "retriable": true
+      },
+      {
+        "code": 9,
+        "message": "Options is required.",
+        "retriable": true
+      },
+      {
+        "code": 10,
+        "message": "Invalid network.",
+        "retriable": true
+      },
+      {
+        "code": 11,
+        "message": "Invalid blockchain.",
+        "retriable": true
+      },
+      {
+        "code": 12,
+        "message": "Signed transaction required",
+        "retriable": true
+      },
+      {
+        "code": 13,
+        "message": "Block not found.",
+        "retriable": true
+      },
+      {
+        "code": 14,
+        "message": "Transaction not found.",
+        "retriable": true
+      },
+      {
+        "code": 15,
+        "message": "Coin view not found.",
+        "retriable": true
+      },
+      {
+        "code": 16,
+        "message": "Error relaying transaction.",
+        "retriable": false
+      },
+      {
+        "code": 17,
+        "message": "Query not supported",
+        "retriable": false
+      },
+      {
+        "code": 32,
+        "message": "Unknown error.",
+        "retriable": false
       }
     ]
   }
