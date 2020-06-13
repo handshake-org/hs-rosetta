@@ -29,7 +29,7 @@
               "value": "2002210000",
               "currency": {
                 "symbol": "HNS",
-                "decimals": 8,
+                "decimals": 6,
                 "metadata": {
                   "Issuer": "handshake-org"
                 }

@@ -18,7 +18,7 @@
           "value": "-2000000000",
           "currency": {
             "symbol": "HNS",
-            "decimals": 8,
+            "decimals": 6,
             "metadata": {
               "Issuer": "handshake-org"
             }
@@ -43,7 +43,7 @@
           "value": "100000",
           "currency": {
             "symbol": "HNS",
-            "decimals": 8,
+            "decimals": 6,
             "metadata": {
               "Issuer": "handshake-org"
             }
@@ -65,7 +65,7 @@
           "value": "1999886000",
           "currency": {
             "symbol": "HNS",
-            "decimals": 8,
+            "decimals": 6,
             "metadata": {
               "Issuer": "handshake-org"
             }
