@@ -103,8 +103,6 @@ describe('Rosetta Schema', function() {
       params.transaction_identifier.hash = tx.hash().toString('hex');
 
       const expected = require(`./data${endpoint}/response.json`);
-      const data = await client.post(endpoint, params);
-
       expected.transaction.transaction_identifier.hash = tx.hash().toString('hex');
       expected.transaction.operations[0].account.address = cbAddress.toString(network);
       expected.transaction.operations[1].account.address = toAddress.toString(network);
@@ -112,6 +110,8 @@ describe('Rosetta Schema', function() {
 
       expected.transaction.operations[0].metadata.asm = tx.inputs[0].witness.toASM();
       expected.transaction.operations[0].metadata.hex = tx.inputs[0].witness.toHex();
+
+      const data = await client.post(endpoint, params);
 
       assert.deepEqual(data, expected);
     });
