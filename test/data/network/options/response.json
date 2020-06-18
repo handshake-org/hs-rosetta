@@ -72,31 +72,36 @@
       },
       {
         "code": 12,
-        "message": "Signed transaction required",
+        "message": "Invalid transaction.",
         "retriable": true
       },
       {
         "code": 13,
-        "message": "Block not found.",
+        "message": "Invalid signed transaction.",
         "retriable": true
       },
       {
         "code": 14,
-        "message": "Transaction not found.",
+        "message": "Block not found.",
         "retriable": true
       },
       {
         "code": 15,
-        "message": "Coin view not found.",
+        "message": "Transaction not found.",
         "retriable": true
       },
       {
         "code": 16,
+        "message": "Coin view not found.",
+        "retriable": true
+      },
+      {
+        "code": 17,
         "message": "Error relaying transaction.",
         "retriable": false
       },
       {
-        "code": 17,
+        "code": 18,
         "message": "Query not supported",
         "retriable": false
       },
