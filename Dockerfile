@@ -38,4 +38,4 @@ COPY --from=build /opt/hsd/ /opt/hsd/
 COPY --from=build /opt/hs-rosetta/ /opt/hs-rosetta
 
 ENTRYPOINT ["hsd"]
-CMD ["--index-tx", "--index-address", "--plugins", "hs-rosetta", "--prefix=/data"]
+CMD ["--index-tx", "--index-address", "--plugins", "hs-rosetta", "--rosetta-http-host=0.0.0.0", "--prefix=/data"]
