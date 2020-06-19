@@ -1,5 +1,7 @@
 # hs-rosetta
 
+![Node.js CI](https://github.com/handshake-org/hs-rosetta/workflows/Node.js%20CI/badge.svg)
+
 hs-rosetta is a [hsd][hsd] plugin for coinbase rosetta.
 
 ## Usage
