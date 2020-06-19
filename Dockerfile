@@ -20,13 +20,13 @@ RUN wget https://github.com/handshake-org/hsd/archive/$TAG.tar.gz \
     && tar -xvf $TAG.tar.gz \
     && mv hsd-$TAG hsd \
     && cd hsd \
-    && npm install \
+    && npm ci \
     && cd ..
 
 COPY . hs-rosetta
 
 RUN cd hs-rosetta \
-    && npm install \
+    && npm ci \
     && npm link
 
 RUN cd hsd \
