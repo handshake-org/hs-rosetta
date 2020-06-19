@@ -12,7 +12,7 @@ requires `--index-tx` `--index-address` for reporting account balances.
 
 ## Reference
 
-https://djr6hkgq2tjcs.cloudfront.net
+[https://www.rosetta-api.org/docs/welcome.html](https://www.rosetta-api.org/docs/welcome.html)
 
 NOTE: We do not support querying address balance by height yet. According to
 the spec, this is optional.
