@@ -1,41 +1,17 @@
-FROM node:12.18.0-alpine3.9 as base
-
-RUN apk add --no-cache bash \
-    unbound-dev \
-    gmp-dev
+FROM node:current-alpine AS base
+RUN apk add --no-cache unbound-dev gmp-dev
+WORKDIR /opt/hs-rosetta
+COPY package*.json /opt/hs-rosetta/
+COPY lib /opt/hs-rosetta/lib/
 
 FROM base as build
-
-WORKDIR /opt
-
-RUN apk add git --no-cache \
-    g++ \
-    gcc \
-    make \
-    python2
-
-ARG TAG=master
-
-RUN wget https://github.com/handshake-org/hsd/archive/$TAG.tar.gz \
-    && tar -xvf $TAG.tar.gz \
-    && mv hsd-$TAG hsd \
-    && cd hsd \
-    && npm ci \
-    && cd ..
-
-COPY . hs-rosetta
-
-RUN cd hs-rosetta \
-    && npm ci \
-    && npm link
-
-RUN cd hsd \
-    && npm link hs-rosetta
+RUN apk add --no-cache gcc g++ make python2 git
+RUN npm ci
 
 FROM base
-ENV PATH="${PATH}:/opt/hsd/bin:/opt/hsd/node_modules/.bin"
-COPY --from=build /opt/hsd/ /opt/hsd/
-COPY --from=build /opt/hs-rosetta/ /opt/hs-rosetta
-
+ENV PATH="${PATH}:/opt/hs-rosetta/node_modules/hsd/bin"
+COPY --from=build /opt/hs-rosetta/node_modules /opt/hs-rosetta/node_modules
 ENTRYPOINT ["hsd"]
-CMD ["--index-tx", "--index-address", "--plugins", "hs-rosetta", "--rosetta-http-host=0.0.0.0", "--prefix=/data"]
+# NOTE: Listening on public interface without auth, make sure to secure the host!
+CMD ["--index-tx", "--index-address", "--plugins", "/opt/hs-rosetta", \
+     "--rosetta-http-host=0.0.0.0", "--rosetta-no-auth", "--prefix=/data"]
