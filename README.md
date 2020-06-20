@@ -29,7 +29,7 @@ Install hsd:
 
 Install hs-rosetta:
 
-    $ git clone https://github.com/tuxcanfly/hs-rosetta
+    $ git clone https://github.com/handshake-org/hs-rosetta
     $ cd hs-rosetta
     $ npm install
     $ npm link
