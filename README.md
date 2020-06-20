@@ -1,6 +1,8 @@
 # hs-rosetta
 
 ![Node.js CI](https://github.com/handshake-org/hs-rosetta/workflows/Node.js%20CI/badge.svg)
+[![npm version](https://badge.fury.io/js/hs-rosetta.svg)](https://badge.fury.io/js/hs-rosetta)
+![NPM](https://img.shields.io/npm/l/hs-rosetta)
 
 handshake 🤝 coinbase
 
