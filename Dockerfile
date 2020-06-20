@@ -6,7 +6,7 @@ COPY lib /opt/hs-rosetta/lib/
 
 FROM base as build
 RUN apk add --no-cache gcc g++ make python2 git
-RUN npm ci
+RUN npm install --production
 
 FROM base
 ENV PATH="${PATH}:/opt/hs-rosetta/node_modules/hsd/bin"
